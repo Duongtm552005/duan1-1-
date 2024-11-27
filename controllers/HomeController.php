@@ -3,16 +3,31 @@
 class HomeController
 {
     public $modelSanPham;
+    public $modelDanhMuc;
 
     public $modelTaiKhoan;
-    public $modelGioHang;
+    // public $modelGioHang;
     // public $modelDangKy;
     public function __construct()
     {
         $this->modelSanPham = new SanPham();
         $this->modelTaiKhoan = new TaiKhoan();
-        $this->modelGioHang = new GioHang();
+        $this->modelDanhMuc = new DanhMuc();
+        // $this->modelGioHang = new GioHang();
     }
+
+    public function sanPham()
+{
+    // Lấy danh sách danh mục
+    $danhMuc = $this->modelDanhMuc->getAllDanhMuc();
+
+    // Lấy danh sách sản phẩm từ model SanPham
+    $listSanPham = $this->modelSanPham->getAllSanPham();
+
+    // Truyền vào view
+    require_once './views/sanPham.php';
+}
+
 
     public function home(){
         $listSanPham = $this->modelSanPham->getAllSanPham();
@@ -121,6 +136,11 @@ class HomeController
         // Điều hướng về trang đăng nhập hoặc trang chủ
         header("Location: " . BASE_URL . "?act=login"); // Hoặc BASE_URL nếu bạn muốn về trang chủ
         exit();
+    }
+
+
+    public function thanhToan(){
+        require_once './views/thanhToan.php';
     }
     
 }

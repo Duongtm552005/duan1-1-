@@ -30,10 +30,7 @@
                                                 <a href="<?= BASE_URL ?>">Trang Chủ</a>
                                             </li>
 
-                                            <li><a href="#">Sản Phẩm<i class="fa fa-angle-down"></i></a>
-                                                <ul class="dropdown">
-                                                    <li><a href="blog-left-sidebar.html">blog left sidebar</a></li>
-                                                </ul>
+                                            <li><a href="<?= BASE_URL . '?act=san-pham' ?>">Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                             </li>
                                             <li><a href="#">Giới Thiệu</a></li>
                                             <li><a href="#">Liên Hệ</a></li>

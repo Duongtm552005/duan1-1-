@@ -11,6 +11,7 @@ require_once './controllers/HomeController.php';
 require_once './models/SanPham.php'; 
 require_once './models/TaiKhoan.php'; 
 require_once './models/GioHang.php';
+require_once './models/DanhMuc.php';
 
 
 // Route
@@ -38,4 +39,9 @@ match ($act) {
     // Base URL/?act=dnah-sach-san-pham
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
+
+    'thanh-toan' => (new HomeController())->thanhToan(),
+    'san-pham' => (new HomeController())->sanPham(),
+   
+
 };
