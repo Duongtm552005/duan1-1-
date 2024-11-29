@@ -40,7 +40,6 @@
                   <tr>
                     <th>STT</th>
                     <th>Họ Tên</th>
-                    <th>Ảnh</th>
                     <th>Email </th>
                     <th>SDT </th>
                     <th>Địa Chỉ</th>
@@ -53,9 +52,7 @@
                 <tr>
                    <td><?= $key+1 ?></td>
                    <td><?=$khachHang['ho_ten'] ?></td>
-                   <td>
-                        <img src="<?= BASE_URL . $khachHang['anh_dai_dien'] ?>" style="width:100px" alt="" onerror="this.onerror=null; this.src='https://i0.wp.com/www.stignatius.co.uk/wp-content/uploads/2020/10/default-user-icon.jpg?w=415&ssl=1'">
-                      </td>
+                  
                    <td><?=$khachHang['email'] ?></td>
                    <td><?=$khachHang['so_dien_thoai'] ?></td>                  
                     <td><?=$khachHang['dia_chi'] ?></td>

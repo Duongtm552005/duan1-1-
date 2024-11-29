@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <?php require_once 'layout/header.php';?>
 <?php require_once 'layout/menu.php';?>
 <main>
@@ -161,5 +162,6 @@
         <!-- page main wrapper end -->
     </main>
 
+    <?php require_once 'layout/miniCart.php'; ?>
 
 <?php require_once 'layout/footer.php' ?>

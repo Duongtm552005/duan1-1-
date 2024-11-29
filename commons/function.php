@@ -101,5 +101,11 @@ function checkLoginAdmin(){
 
 // Định dạng giá
 function formatPrice($price) {
-    return number_format($price, 0, ',', '.');
+    // Đảm bảo giá trị đầu vào là số, nếu không đặt mặc định là 0
+    if (!is_numeric($price)) {
+        $price = 0;
+    }
+    // Định dạng số với dấu phẩy ngăn cách và thêm đơn vị "đ"
+    return number_format($price, 0, ',', '.') . ' đ';
 }
+

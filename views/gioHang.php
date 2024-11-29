@@ -47,7 +47,7 @@
                                     <?php if (!empty($chiTietGioHang)): ?>
                                         <?php
                                         $tong_tien_gio_hang = 0;
-                                        foreach ($chiTietGioHang as $sanPham):
+                                        foreach ($chiTietGioHang as $key => $sanPham):
                                         ?>
                                             <tr>
                                                 <td class="pro-thumbnail"><a href="#"><img class="img-fluid" src="<?= BASE_URL . $sanPham['hinh_anh'] ?>" alt="Product" /></a></td>
@@ -56,9 +56,9 @@
                                                     <span>
                                                         <?php
                                                         if ($sanPham['gia_khuyen_mai']) { ?>
-                                                            <?= formatprice($sanPham['gia_khuyen_mai']) . ' VNĐ' ?>
+                                                            <?= formatprice($sanPham['gia_khuyen_mai']) . ' đ' ?>
                                                         <?php } else { ?>
-                                                            <?= formatprice($sanPham['gia_san_pham']) . ' VNĐ' ?>
+                                                            <?= formatprice($sanPham['gia_san_pham']) . ' đ' ?>
                                                         <?php } ?>
                                                     </span>
                                                 </td>
@@ -77,7 +77,7 @@
                                                             $tong_tien = $sanPham['gia_san_pham'] * $sanPham['so_luong'];
                                                         }
                                                         $tong_tien_gio_hang += $tong_tien;
-                                                        echo formatprice($tong_tien);  ?>
+                                                        echo formatprice($tong_tien). ' đ';  ?>
                                                     </span>
                                                 </td>
                                                 <td class="pro-remove"><a href="#"><i class="fa fa-trash-o"></i></a></td>
@@ -116,20 +116,20 @@
                                     <table class="table">
                                         <tr>
                                             <td>Tổng tiền sản phẩm</td>
-                                            <td><?= formatPrice($tong_tien_gio_hang) . ' VNĐ'?></td>
+                                            <td><?= formatprice($tong_tien_gio_hang) . ' VNĐ' ?></td>
                                         </tr>
                                         <tr>
                                             <td>Vận chuyển</td>
-                                            <td>50.000 VNĐ</td>
+                                            <td>50.000 đ VNĐ</td>
                                         </tr>
                                         <tr class="total">
                                             <td>Tổng thanh toán</td>
-                                            <td class="total-amount"><?= formatPrice($tong_tien_gio_hang + 50.000) . ' VNĐ'?></td>
+                                            <td class="total-amount"><?= formatprice($tong_tien_gio_hang + 50000) . ' VNĐ' ?></td>
                                         </tr>
                                     </table>
                                 </div>
                             </div>
-                            <a href="checkout.html" class="btn btn-sqr d-block">Tiến hành đặt hàng </a>
+                            <a href="<?=  BASE_URL . '?act=thanh-toan' ?>" class="btn btn-sqr d-block">Tiến hành đặt hàng </a>
                         </div>
                     </div>
                 </div>

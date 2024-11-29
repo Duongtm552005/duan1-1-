@@ -30,7 +30,7 @@
                                                 <a href="<?= BASE_URL ?>">Trang Chủ</a>
                                             </li>
 
-                                            <li><a href="<?= BASE_URL . '?act=san-pham' ?>">Sản Phẩm<i class="fa fa-angle-down"></i></a>
+                                            <li><a href="<?= BASE_URL . '?act=san-pham'?>">Sản Phẩm<i class="fa fa-angle-down"></i></a>
                                             </li>
                                             <li><a href="#">Giới Thiệu</a></li>
                                             <li><a href="#">Liên Hệ</a></li>
@@ -54,13 +54,14 @@
                                 </div>
                                 <div class="header-configure-area">
                                     <ul class="nav justify-content-end">
-                                    <label for="user_name">
+                                        <label for="">
                                         <?php 
-                                        if (isset($_SESSION['user_client'])) {
-                                            echo "Chào, " . $_SESSION['user_client']; 
-                                        } 
+                                            if (isset($_SESSION['user_client'])) {
+                                                echo "Chào, " . $_SESSION['user_client']['ho_ten']; // Hoặc sử dụng 'email' hoặc trường phù hợp khác
+                                            } 
                                         ?>
-                                    </label>
+
+                                        </label>
                                         <li class="user-hover">
                                             <a href="#">
                                                 <i class="pe-7s-user"></i>
@@ -77,7 +78,7 @@
                                             <li><a href="<?= BASE_URL . '?act=logout' ?>">Đăng Xuất</a></li>
                                         <?php } ?>
 
-                                        </ul>
+                                            </ul>
                                         </li>
                                         <li>
                                             <a href="#" class="minicart-btn">

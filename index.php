@@ -43,5 +43,8 @@ match ($act) {
     'thanh-toan' => (new HomeController())->thanhToan(),
     'san-pham' => (new HomeController())->sanPham(),
    
+   'xoa-san-pham' => (new HomeController())->deleteProduct(),
+   'thanh-toan' => (new HomeController())->thanhToan(),
+    
 
 };
