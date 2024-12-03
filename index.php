@@ -12,6 +12,8 @@ require_once './models/SanPham.php';
 require_once './models/TaiKhoan.php'; 
 require_once './models/GioHang.php';
 require_once './models/DanhMuc.php';
+require_once './models/DonHang.php';
+
 
 
 // Route
@@ -39,12 +41,13 @@ match ($act) {
     // Base URL/?act=dnah-sach-san-pham
     'them-gio-hang' => (new HomeController())->addGioHang(),
     'gio-hang' => (new HomeController())->gioHang(),
-
-    'thanh-toan' => (new HomeController())->thanhToan(),
     'san-pham' => (new HomeController())->sanPham(),
    
-   'xoa-san-pham' => (new HomeController())->deleteProduct(),
-   'thanh-toan' => (new HomeController())->thanhToan(),
+    'xoa-san-pham' => (new HomeController())->deleteOneGioHang(),  
+
+    'thanh-toan' => (new HomeController())->thanhToan(),
+    'xu-ly-thanh-toan' =>(new HomeController())->postThanhToan(),
+    'tim-kiem' => (new HomeController())->timKiem(),
     
 
 };

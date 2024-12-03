@@ -60,5 +60,5 @@
         </div>
     </div>
 </main>
-
+<?php require_once 'views/layout/miniCart.php'; ?>
 <?php require_once 'views/layout/footer.php'; ?>

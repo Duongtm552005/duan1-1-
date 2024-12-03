@@ -100,12 +100,14 @@ function checkLoginAdmin(){
 }
 
 // Định dạng giá
-function formatPrice($price) {
-    // Đảm bảo giá trị đầu vào là số, nếu không đặt mặc định là 0
-    if (!is_numeric($price)) {
-        $price = 0;
-    }
-    // Định dạng số với dấu phẩy ngăn cách và thêm đơn vị "đ"
-    return number_format($price, 0, ',', '.') . ' đ';
+
+
+function formatprice($number) {
+    return number_format(floatval($number), 0, ',', '.');
 }
+?>
+
+
+
+
 

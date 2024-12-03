@@ -74,7 +74,6 @@ class TaiKhoan
             $stmt = $this->conn->prepare($sql);
             $stmt->execute([
                 ':email' => $email,
-
             ]);
             return $stmt->fetch();
         } catch (Exception $e) {

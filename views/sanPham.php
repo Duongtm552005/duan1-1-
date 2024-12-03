@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <?php require_once 'layout/header.php';?>
 <?php require_once 'layout/menu.php';?>
 <main>
@@ -62,7 +62,6 @@
                                         <div class="top-bar-left">
                                             <div class="product-view-mode">
                                                 <a class="active" href="#" data-target="grid-view" data-bs-toggle="tooltip" title="Grid View"><i class="fa fa-th"></i></a>
-                                                <a href="#" data-target="list-view" data-bs-toggle="tooltip" title="List View"><i class="fa fa-list"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -140,9 +139,6 @@
                                          <?php endforeach ?>
                                     </div>
                             </div>
-                            <!-- product item list wrapper end -->
-
-                            <!-- start pagination area -->
                             <div class="paginatoin-area text-center">
                                 <ul class="pagination-box">
                                     <li><a class="previous" href="#"><i class="pe-7s-angle-left"></i></a></li>

@@ -101,14 +101,44 @@ class GioHang
             echo 'Lỗi' . $e->getMessage();
         }
     }
-    public function removeProductCart($gio_hang_id, $san_pham_id) {
-        $sql = "DELETE FROM gio_hang WHERE gio_hang_id = :gio_hang_id AND san_pham_id = :san_pham_id";
-        $stmt = $this->conn->prepare($sql);
-        $stmt->bindParam(':gio_hang_id', $gio_hang_id, PDO::PARAM_INT);
-        $stmt->bindParam(':san_pham_id', $san_pham_id, PDO::PARAM_INT);
-    
-        return $stmt->execute();
+    // Model xử lý giỏ hàng
+    public function deleteChiTietGioHang($id)
+    {
+        try {
+            $sql = "DELETE FROM chi_tiet_gio_hangs WHERE id = :id";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([
+                ':id' => $id,
+            ]);
+            return true;
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
     }
+    public function getSanPhamByDanhMuc($danh_muc_id) {
+        try {
+            $sql = 'SELECT * FROM san_phams WHERE danh_muc_id = :danh_muc_id';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute([':danh_muc_id' => $danh_muc_id]);
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+    
+    public function getAllSanPham() {
+        try {
+            $sql = 'SELECT * FROM san_phams';
+            $stmt = $this->conn->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll();
+        } catch (Exception $e) {
+            echo "Lỗi: " . $e->getMessage();
+        }
+    }
+    
+    
+    
     
 }
 
