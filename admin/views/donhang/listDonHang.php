@@ -41,6 +41,7 @@
                     <th>Mã đơn hàng</th>
                     <th>Tên người nhận</th>
                     <th>Số điện thoại</th>
+                    <th>Dia chi</th>
                     <th>Ngày đặt</th>
                     <th>Tổng tiền</th>
                     <th>Trạng thái</th>

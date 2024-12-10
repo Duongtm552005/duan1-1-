@@ -18,15 +18,26 @@ class HomeController
     }
 
     public function sanPham()
+    {
+        $danhMuc = $this->modelDanhMuc->getAllDanhMuc();
+    
+        // Kiểm tra xem có danh_muc_id hay không
+        $danhMucId = $_GET['danh_muc_id'] ?? null;
+    
+        if ($danhMucId) {
+            $listSanPham = $this->modelSanPham->getSanPhamByDanhMuc($danhMucId);
+        } else {
+            $listSanPham = $this->modelSanPham->getAllSanPham();
+        }
+    
+        require './views/sanPham.php';
+    }
+public function sanPhamTheoDanhMuc()
 {
-    // Lấy danh sách danh mục
+    $idDanhMuc = $_GET['id'] ?? 0;
     $danhMuc = $this->modelDanhMuc->getAllDanhMuc();
-
-    // Lấy danh sách sản phẩm từ model SanPham
-    $listSanPham = $this->modelSanPham->getAllSanPham();
-
-    // Truyền vào view
-    require_once './views/sanPham.php';
+    $listSanPham = $this->modelSanPham->getSanPhamByDanhMuc($idDanhMuc);
+    require './views/sanPham.php';
 }
 
 

@@ -111,7 +111,7 @@ class AdminDonHangController
                 // require_once './views/sanpham/addSanPham.php';
                 // Đặt một chỉ thị xóa session sau khi hiện thị form
                 $_SESSION['flash'] = true;
-                header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don_hang&id_don_hang=' . $don_hang_id);
+                header("Location: " . BASE_URL_ADMIN . '?act=form-sua-don-hang&id_don_hang=' . $don_hang_id);
                 exit();
             }
         }

@@ -82,5 +82,15 @@ class SanPham {
         }
 
     }
+    public function getSanPhamByDanhMuc($idDanhMuc)
+    {
+        $sql = 'SELECT * FROM san_phams WHERE danh_muc_id = :danhMucId';
+        $stmt = $this->conn->prepare($sql);
+        $stmt->bindParam(':danhMucId', $idDanhMuc, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+    
+    
 }
 ?>

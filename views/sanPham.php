@@ -32,20 +32,21 @@
                             <div class="sidebar-single">
                             <h5 class="sidebar-title">Danh Mục</h5>
                             <div class="sidebar-body">
-                                <ul class="shop-categories">
-                                    <?php if (!empty($danhMuc)): ?>
-                                        <?php foreach ($danhMuc as $dm): ?>
-                                            <li>
-                                                <a href="#">
-                                                    <?= htmlspecialchars($dm['ten_danh_muc']) ?>
-                                                    <span>(<?= htmlspecialchars($dm['mo_ta'] ?: '0') ?>)</span>
-                                                </a>
-                                            </li>
-                                        <?php endforeach; ?>
-                                    <?php else: ?>
-                                        <li>Không có danh mục nào</li>
-                                    <?php endif; ?>
-                                </ul>
+                            <ul class="shop-categories">
+                            <?php if (!empty($danhMuc)): ?>
+                                <?php foreach ($danhMuc as $dm): ?>
+                                    <li>
+                                        <a href="<?= BASE_URL . '?act=san-pham&danh_muc_id=' . $dm['id'] ?>">
+                                            <?= htmlspecialchars($dm['ten_danh_muc']) ?>
+                                            <span>(<?= htmlspecialchars($dm['mo_ta'] ?: '0') ?>)</span>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <li>Không có danh mục nào</li>
+                            <?php endif; ?>
+                        </ul>
+
                             </div>
                         </div>
                 </aside>
@@ -65,22 +66,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-lg-5 col-md-6 order-1 order-md-2">
-                                        <div class="top-bar-right">
-                                            <div class="product-short">
-                                                <p>Sort By : </p>
-                                                <select class="nice-select" name="sortby">
-                                                    <option value="trending">Relevance</option>
-                                                    <option value="sales">Name (A - Z)</option>
-                                                    <option value="sales">Name (Z - A)</option>
-                                                    <option value="rating">Price (Low &gt; High)</option>
-                                                    <option value="date">Rating (Lowest)</option>
-                                                    <option value="price-asc">Model (A - Z)</option>
-                                                    <option value="price-asc">Model (Z - A)</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
+                                        
                                 </div>
                             </div>
                             <!-- shop product top wrap start -->
